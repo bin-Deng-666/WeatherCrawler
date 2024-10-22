@@ -24,10 +24,10 @@ headers = {
     "X-Requested-With": "XMLHttpRequest",
 }
 url = "https://tianqi.2345.com/Pc/GetHistory"
-cityDic_path = 'cityDic.csv'
+cityDic_path = './data/cityDic.csv'
 
 # Write the Information which You Wanna Crawl
-city = "北京"
+city = "广州"
 year = 2024
 month = 10
 
@@ -55,7 +55,7 @@ for row in rows:
     data.append([ele for ele in cols if ele])
 
 # Write to the File
-file_path = "{city}_{year}_{month}.csv".format(city=city, year=year, month=month)
+file_path = "./data/{city}_{year}_{month}.csv".format(city=city, year=year, month=month)
 with open(file_path, mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow(['日期', '最高温度', '最低温度', '天气', '风向', '空气质量'])

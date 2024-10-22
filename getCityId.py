@@ -12,7 +12,7 @@ result = re.findall(pattern, response)
 data = {item[1]: item[2] for item in result}
 
 # Write to the CSV File
-file_path = 'cityDic.csv'
+file_path = './data/cityDic.csv'
 with open(file_path, mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow(['城市', '代码'])  # 表头
